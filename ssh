@@ -1,0 +1,11 @@
+Making an ssh key
+ssh-keygen -t rsa -C "justinvf@gmail.com"
+
+ssh-ing using a specific public key
+ssh -i /path/to/key foo@bar
+
+ssh-ing with x compressed x forwarding
+ssh -XC foo@bar
+
+ssh-ing to a host on the local network:
+add .local after the hostname. This uses mDNS. Might not work in all environments.
