@@ -46,3 +46,6 @@ ATLAS=~/src-install/atlas/lib python setup.py build --fcompiler=gnu95
 python setup.py install
 
 # SciPy
+Download and install. Easy after numpy is there. Install looks like:
+ATLAS=~/src-install/atlas/lib python setup.py build --fcompiler=gnu95
+python setup.py install

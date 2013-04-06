@@ -14,6 +14,14 @@ sudo make install
 Put the following stuff in ~/.emacs/init.el:
 
 
+Get ipython mode (It's awesome and has ipython integration)
+https://launchpad.net/python-mode/
+(add-to-list 'load-path "~/.emacs.d//python-mode.el-6.1.1")
+(setq py-install-directory "~/.emacs.d/python-mode.el-6.1.1/")
+(require 'python-mode)
+(setq py-shell-name "ipython")
+
+
 (add-to-list 'load-path "<path_to>/python-mode.el-6.1.1")
 (setq py-install-directory "<path_to>/python-mode.el-6.1.1")
 (require 'python-mode)

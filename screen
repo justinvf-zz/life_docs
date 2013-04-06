@@ -1,0 +1,15 @@
+Screen should be used for all long running things that you do on a remote host.
+
+After sshing
+
+screen -S <name of thing you are working on>
+
+Once in screen Ctrl-a starts you off with a command. This drives me nuts in emacs so I usually don't do text editing in screen.
+
+Ctrl-a d: Will detach you from the session. Logout if you want. Stuff will keep running fine.
+
+screen -ls: Will show you what sessions are running. This is why you should pass "-S <name>" when starting screen.
+screen -r <name of session>: Will re-attach you to the session. If you didn't name the session, just type the pid from `screen -ls`.
+Ctrl-a c: Make a window from within screen.
+Ctrl-a n/p: Go to the next/previous window
+
