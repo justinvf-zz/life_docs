@@ -8,3 +8,27 @@ cd emacs-24.3
 ./configure --without-x   # I like my emacs to just live in a terminal. It makes the install a lot easier too.
 make
 sudo make install
+
+
+
+Put the following stuff in ~/.emacs/init.el:
+
+
+(add-to-list 'load-path "<path_to>/python-mode.el-6.1.1")
+(setq py-install-directory "<path_to>/python-mode.el-6.1.1")
+(require 'python-mode)
+
+(require 'package)
+(add-to-list 'package-archives
+             '("marmalade" . "http://marmalade-repo.org/packages/"))
+(package-initialize)
+
+
+## For Clojure
+M-x package-refresh-contents
+
+https://github.com/technomancy/clojure-mode
+M-x package-install [RET] clojure-mode [RET]
+
+https://github.com/kingtim/nrepl.el
+M-x package-install [RET] nrepl [RET]
