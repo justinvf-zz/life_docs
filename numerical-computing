@@ -1,5 +1,11 @@
 #Fortran
-Fortran is the beast behind a lot of the numerical computing libraries. There are two main fortran compilers: gfortran and g77. Pick one and stick with it. I choose gfortran.
+Fortran is the beast behind a lot of the numerical computing libraries. There are two main fortran compilers: gfortran and g77. Pick one and stick with it. I choose gfortran. Seems like gfortran is the best option (still being developed at least).
+
+
+#LAPACK
+This is more linear algebra stuff, more complicated, that sits on top of BLAS. ATLAS optimizes some part of it, but most of it comes from netlib's "reference implementation". www.netlib.org/lapack/
+
+You should download it and put it in your src-install package before doing the ATLAS step.
 
 #ATLAS
 This builds a BLAS as well as some bits on LINPACK. This is needed by most numerical stuff.
@@ -13,6 +19,9 @@ cpufreq-selector -g performance
 
 You can also install LAPACK with some parts optimized by atlas. Go to www.netlib.org/lapack to get the tar
 
+tar -xvjpf atlas3.10.1.tar.bz2 
+cd ATLAS
+
 mkdir Linux_Thor
 cd Linux_Thor
 ../configure -b 64 -D c -DPentiumCPS3500  --prefix=/home/justinvf/src-install/atlas --with-netlib-lapack-tarfile=/home/justinvf/src-install/lapack-3.4.2.tgz --shared --prefix=/home/justinvf/src-install/atlas
@@ -21,14 +30,10 @@ If you mess something up, it's easiest to just rm the build dir and re-run confi
 
 make build
 make check
-make pcheck
 make install
 
 #BLAS
 These are the basic linear algebra libraries. ATLAS makes these.
-
-#LAPACK
-This is more linear algebra stuff, more complicated, that sits on top of BLAS. ATLAS optimizes some part of it, but most of it comes from netlib's "reference implementation". www.netlib.org/lapack/
 
 #Intel MKL
 Intel also provides their version of BLAS and LINPACK. It's supposedly faster on Intel hardware, but for commercial use it costs $500. I'm passing for now but if I have some client one day that wants faster stuff, I would give it a shot.
@@ -43,9 +48,16 @@ http://sourceforge.net/projects/numpy/files/NumPy/
 On install, you gotta tell it where ATLAS stuff is. You can do that by setting an environment variable:
 
 ATLAS=~/src-install/atlas/lib python setup.py build --fcompiler=gnu95
-python setup.py install
+sudo python setup.py install
 
 # SciPy
-Download and install. Easy after numpy is there. Install looks like:
+
+Make sure that you have g++ installed before building.
+
+Download
+http://sourceforge.net/projects/scipy/files/
+
+Easy after numpy is there. Install looks like:
+
 ATLAS=~/src-install/atlas/lib python setup.py build --fcompiler=gnu95
-python setup.py install
+sudp ATLAS=~/src-install/atlas/lib python setup.py install
