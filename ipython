@@ -1,0 +1,7 @@
+For line profiler:
+https://bitbucket.org/kmike/line_profiler/commits/branch/default
+
+(or the main repo once https://bitbucket.org/robertkern/line_profiler/pull-request/2   closes)
+
+%loadext memory_profiler
+%loadext line_profiler

@@ -1,0 +1,12 @@
+http://stackoverflow.com/questions/12948446/matplotlib-wont-draw-python3
+
+sudo apt-get install sudo apt-get install tk-dev
+
+pip install python3-tk
+
+then build python3
+
+then build matplotlib
+
+then stuff works.
+

@@ -48,7 +48,7 @@ http://sourceforge.net/projects/numpy/files/NumPy/
 On install, you gotta tell it where ATLAS stuff is. You can do that by setting an environment variable:
 
 ATLAS=~/src-install/atlas/lib python setup.py build --fcompiler=gnu95
-sudo python setup.py install
+python setup.py install
 
 # SciPy
 
@@ -60,4 +60,4 @@ http://sourceforge.net/projects/scipy/files/
 Easy after numpy is there. Install looks like:
 
 ATLAS=~/src-install/atlas/lib python setup.py build --fcompiler=gnu95
-sudp ATLAS=~/src-install/atlas/lib python setup.py install
+ATLAS=~/src-install/atlas/lib python setup.py install
