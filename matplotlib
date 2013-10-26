@@ -10,3 +10,4 @@ then build matplotlib
 
 then stuff works.
 
+%matplotlib tk

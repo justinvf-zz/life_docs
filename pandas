@@ -16,5 +16,4 @@ http://googlecode.com/p/numexpr
 
 # Cython
 Allows writing c extensions in python. Used to build the dev version. And it's just really cool.
-wget http://cython.org/release/Cython-0.18.tar.gz
-
+pip install cython
